@@ -1,0 +1,23 @@
+
+        int total_len=0,code=0,temp,rem;
+        String[] input2=input1.split(" ");
+        for(int i=0;i<input2.length;i++){
+        int len=input2[i].length();
+        total_len+=len;
+        }
+        if(total_len>9)
+        {
+            String s=String.valueOf(total_len);
+            int len=s.length();
+            total_len=Integer.valueOf(s);
+            for(int i=0;i<len;i++){
+                rem=total_len%10;
+                code+=rem;
+                temp=total_len/10;
+                total_len=temp;
+            }
+            total_len=code;
+        }
+     return total_len;
+    }
+}
