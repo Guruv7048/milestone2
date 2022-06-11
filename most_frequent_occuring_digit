@@ -1,0 +1,41 @@
+
+        final int[] arr=new int[10];
+        int value;
+       for(int i=0;i<input2;i++)
+       {
+           String s=String.valueOf(input1[i]);
+           int len=s.length();
+           input1[i]=Integer.parseInt(s);
+           for(int j=0;j<len;j++)
+           {
+             value=input1[i]%10;
+             input1[i]=input1[i]/10;
+             switch(value)
+           {
+            case 0:arr[value]++;break;
+            case 1:arr[value]++;break;
+            case 2:arr[value]++;break;
+            case 3:arr[value]++;break;
+            case 4:arr[value]++;break;
+            case 5:arr[value]++;break;
+            case 6:arr[value]++;break;
+            case 7:arr[value]++;break;
+            case 8:arr[value]++;break;
+            case 9:arr[value]++;break;
+           }
+          }
+       }
+    
+    int j=0;
+     int largest=arr[0];
+    for(int i=1;i<arr.length;i++)
+        if(arr[i]>largest)
+            largest=arr[i];
+        
+    for(int i=0;i<arr.length;i++)
+        if(largest==arr[i])
+            if(i>j)
+                j=i;
+    System.out.println("most frequently occuring digit in this series="+j);
+    return j;
+  
