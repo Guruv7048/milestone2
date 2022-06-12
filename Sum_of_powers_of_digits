@@ -1,0 +1,15 @@
+
+    double temp=0,a;int sum=0;
+		String s=String.valueOf(input1);
+		int len=s.length();
+		input1=Integer.parseInt(s);
+		double[] arr=new double[len];
+		for(int i=len-1;i>=0;i--)
+		{ 
+      arr[i]=input1%10;
+		  input1=input1/10;
+		  a=Math.pow(arr[i],temp);
+      sum=sum+(int)a;
+		  temp=arr[i];
+		}
+    return sum;
