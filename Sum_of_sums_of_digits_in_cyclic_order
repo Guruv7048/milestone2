@@ -1,0 +1,16 @@
+    int sum=0;
+		String s=String.valueOf(input1);
+		int len=s.length();
+		input1=Integer.parseInt(s);
+		int arr[]=new int[len];
+		for(int i=0;i<len;i++)
+		{
+			arr[i]=input1%10;
+			input1=input1/10;
+		}
+		for(int i=0;i<len;i++)
+		   for(int j=len-1-i;j>=0;j--)
+		   {
+			   sum+=arr[j];
+		   }
+	  return sum;
