@@ -1,0 +1,67 @@
+ int k=0;
+      int count=0,count1=0,store=0,count2=0;
+       String str1;
+       String[] input5=input2.split(":");
+       for(int i=0;i<input5.length;i++)
+        if(input5[i].length()==input1.length())
+        {  
+           input5[k]=input5[i];
+           k++;
+        }
+       String[] input3=new String[k];
+       input3=Arrays.copyOf(input5,k);  
+       
+       for(int j=0;j<input3.length;j++)
+      { 
+          count=0;
+          for(int i=0;i<input1.length();i++)
+          {
+           char ch=input1.charAt(i);
+           char c=input3[j].charAt(i);
+           boolean r=Character.toString(ch).equalsIgnoreCase(Character.toString(c));
+          if(r==true)
+           count++;
+          }
+          if(count==(input3[j].length()-1))
+          {
+            int index=input1.indexOf("_",0);
+            char d=input3[j].charAt(index);
+            StringBuilder string=new StringBuilder(input3[j]);
+            string.setCharAt(index,d);
+            input3[count1]=string.toString();
+            count1++;
+            count=0;
+          }
+          else
+          count2++;
+       }
+    
+       if(count2==input3.length)
+         str1="ERROR-009";
+       else
+       {   
+        String[] input4=new String[count1];
+        input4=Arrays.copyOf(input3,count1);
+        for(int i=0;i<count1;i++)
+        {
+           input4[i]=input4[i].toUpperCase();
+           System.out.println(input4[i]);
+        }
+        if(input4.length==1)
+        str1=input4[store];
+        else{ 
+        str1=input4[store].concat(":");
+        for(int i=1;i<input4.length-1;i++)
+        {
+             store=i;
+             str1=str1.concat(input4[i]);
+             for(int j=i;j<i+1;j++)
+             {
+                 str1=str1.concat(":");
+             }
+         }
+        str1=str1.concat(input4[++store]);
+        System.out.println(str1);
+        }
+       } 
+        return str1;
